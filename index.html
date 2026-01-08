@@ -280,6 +280,105 @@
             letter-spacing: 1px;
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-float:hover {
+            width: 220px;
+            border-radius: 30px;
+            background: #128C7E;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        .whatsapp-text {
+            opacity: 0;
+            white-space: nowrap;
+            margin-left: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+        }
+
+        .whatsapp-float i {
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover i {
+            margin-right: 10px;
+        }
+
+        /* Kontak Info WhatsApp di Footer */
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(20, 25, 60, 0.7);
+            border-radius: 15px;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info h3 {
+            color: #25D366;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .contact-info p {
+            color: #bae6fd;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        }
+
         /* Main content */
         section {
             max-width: 1100px;
@@ -536,6 +635,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .social-icon::before {
@@ -638,6 +738,18 @@
             .planet-1, .planet-2 {
                 display: none;
             }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+            
+            .whatsapp-float:hover {
+                width: 180px;
+            }
         }
     </style>
 </head>
@@ -651,6 +763,12 @@
     <!-- Planet -->
     <div class="planet planet-1"></div>
     <div class="planet planet-2"></div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6287814530831" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat via WhatsApp</span>
+    </a>
 
     <header>
         <div class="header-content">
@@ -680,6 +798,13 @@
                     <div class="stat-value">LVL 99</div>
                     <div class="stat-label">Gamer Rank</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Chat Ready</div>
+                </div>
             </div>
         </div>
     </header>
@@ -698,6 +823,7 @@
                 <div class="skill-tag">PC Gaming Orbit</div>
                 <div class="skill-tag">Pemecahan Masalah Sistem</div>
                 <div class="skill-tag">Optimasi Kecepatan Cahaya</div>
+                <div class="skill-tag">Komunikasi WhatsApp Intergalaksi</div>
             </div>
         </div>
 
@@ -751,22 +877,35 @@
     </section>
 
     <footer>
+        <div class="contact-info">
+            <h3><i class="fab fa-whatsapp"></i> Kontak WhatsApp</h3>
+            <p><strong>Nomor:</strong> 0878-1453-0831</p>
+            <p>Siap untuk kolaborasi atau diskusi tentang proyek teknologi dan gaming?</p>
+            <a href="https://wa.me/6287814530831" target="_blank" class="contact-button">
+                <i class="fab fa-whatsapp"></i> Chat Sekarang
+            </a>
+        </div>
+
         <div class="social-icons">
-            <a href="#" class="social-icon">
+            <a href="https://wa.me/6287814530831" target="_blank" class="social-icon" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-icon" title="Discord">
                 <i class="fab fa-discord"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" title="Steam">
                 <i class="fab fa-steam"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" title="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.instagram.com/whos.clbs?igsh=MXI0bWNsdXR3dm83dA==" target="_blank" class="social-icon">
+            <a href="https://www.instagram.com/whos.clbs?igsh=MXI0bWNsdXR3dm83dA==" target="_blank" class="social-icon" title="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
         <p class="copyright">© 2026 Rafka | Portfolio Galaksi Gaming Edition | SMKS 1 Barunawati</p>
         <p class="copyright">Instagram: <a href="https://www.instagram.com/whos.clbs?igsh=MXI0bWNsdXR3dm83dA==" target="_blank" style="color:#a855f7; text-decoration: none;">@whos.clbs</a></p>
+        <p class="copyright">WhatsApp: <a href="https://wa.me/6287814530831" target="_blank" style="color:#25D366; text-decoration: none;">0878-1453-0831</a></p>
     </footer>
 
     <script>
@@ -815,7 +954,7 @@
             comet.style.height = `${size}px`;
             
             // Warna acak
-            const colors = ['#0ea5e9', '#a855f7', '#ffffff'];
+            const colors = ['#0ea5e9', '#a855f7', '#ffffff', '#25D366'];
             const color = colors[Math.floor(Math.random() * colors.length)];
             comet.style.background = color;
             comet.style.boxShadow = `0 0 10px 2px ${color}`;
@@ -830,137 +969,4 @@
                 },
                 { 
                     opacity: 1,
-                    transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 + 100}px) scale(0.5)`
-                },
-                { 
-                    opacity: 0,
-                    transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 + 200}px) scale(0.1)`
-                }
-            ], {
-                duration: duration * 1000,
-                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
-            });
-            
-            // Hapus elemen setelah animasi selesai
-            animation.onfinish = () => {
-                comet.remove();
-            };
-        }
-        
-        // Efek klik
-        document.addEventListener('click', function(e) {
-            // Efek ripple
-            const ripple = document.createElement('div');
-            ripple.style.position = 'fixed';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'radial-gradient(circle, rgba(14,165,233,0.6) 0%, rgba(168,85,247,0.3) 70%, transparent 100%)';
-            ripple.style.transform = 'translate(-50%, -50%) scale(0)';
-            ripple.style.pointerEvents = 'none';
-            ripple.style.zIndex = '9999';
-            
-            const size = Math.random() * 100 + 50;
-            ripple.style.width = `${size}px`;
-            ripple.style.height = `${size}px`;
-            ripple.style.left = `${e.clientX}px`;
-            ripple.style.top = `${e.clientY}px`;
-            
-            document.body.appendChild(ripple);
-            
-            // Animasi ripple
-            const animation = ripple.animate([
-                { transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
-                { transform: 'translate(-50%, -50%) scale(2)', opacity: 0 }
-            ], {
-                duration: 800,
-                easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
-            });
-            
-            // Hapus elemen setelah animasi selesai
-            animation.onfinish = () => {
-                ripple.remove();
-            };
-            
-            // Kadang-kadang buat komet saat klik
-            if (Math.random() > 0.7) {
-                createComet();
-            }
-        });
-        
-        // Efek hover untuk stat cards
-        document.addEventListener('DOMContentLoaded', function() {
-            createStars();
-            
-            // Buat komet secara berkala
-            setInterval(createComet, 3000);
-            
-            // Efek hover untuk stat cards
-            const statCards = document.querySelectorAll('.stat-card');
-            statCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) rotateX(10deg) scale(1.05)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(-10px) rotateX(5deg)';
-                });
-            });
-            
-            // Efek ketik untuk judul
-            const title = document.querySelector('header h1');
-            const originalText = title.textContent;
-            title.textContent = '';
-            
-            let i = 0;
-            function typeWriter() {
-                if (i < originalText.length) {
-                    title.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 120);
-                }
-            }
-            
-            // Mulai animasi ketik setelah halaman dimuat
-            setTimeout(typeWriter, 800);
-            
-            // Efek scroll untuk project items
-            const projectItems = document.querySelectorAll('.project-item');
-            const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateX(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            projectItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(-30px)';
-                item.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-                observer.observe(item);
-            });
-            
-            // Tambahkan efek audio klik (opsional)
-            const clickSound = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==');
-            
-            document.addEventListener('click', function() {
-                // Hanya mainkan suara jika ada interaksi pengguna terlebih dahulu
-                if (window.userInteracted) {
-                    clickSound.currentTime = 0;
-                    clickSound.play().catch(e => console.log("Audio play failed (normal)"));
-                }
-            });
-            
-            // Tandai bahwa pengguna telah berinteraksi
-            document.addEventListener('mousedown', function() {
-                window.userInteracted = true;
-            });
-        });
-    </script>
-</body>
-</html>
+                    transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100
